@@ -1,0 +1,73 @@
+<%- include('../partials/header.ejs') %>
+
+<div id="page-profile">
+    <div id="recipes-cover">
+        <div class="container text-center">
+            <h1>Your Recipes, <%= user.name %></h1>
+            <h4><i>The ultimate coffee recipe tracker</i></h4>
+            <button type="button" class="btn btn-light">Add</button>
+            <button type="button" class="btn btn-light">Edit</button>
+
+            <form id="recipe-form" class="row g-3" method="POST" action="/users/register">
+
+                <ul class="error-msgs"></ul>
+
+
+                <div class="col-md-3">
+                    <label for="brand" class="form-label">Brand</label>
+                    <input type="text" class="form-control" id="brand" name="brand">
+                </div>
+
+                <div class="col-md-3">
+                  <label for="fullname" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="fullname" name="fullname">
+                </div>
+
+                <div class="col-md-2">
+                    <label for="rating" class="form-label">Type</label>
+                    <select class="form-select" id="rating" name="rating">
+                        <option selected>Bean Type</option>
+                        <option value="single-origin">Single Origin</option>
+                        <option value="blend">Blend</option>
+                      </select>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="rating" class="form-label">Equipment</label>
+                    <select class="form-select" id="rating" name="rating">
+                        <option selected>Equipment Used...</option>
+                        <option value="Aeropress">Aeropress</option>
+                        <option value="V60">V60</option>
+                        <option value="3">3</option>
+                      </select>
+                </div>
+
+
+
+                <div class="col-md-1">
+                    <label for="clicks" class="form-label"># Clicks</label>
+                    <input type="number" class="form-control" id="clicks" name="clicks">
+                </div>
+
+                <div class="col-md-1">
+                    <label for="time" class="form-label">Brew Time</label>
+                    <input type="number" class="form-control" id="time" name="time">
+                </div>
+
+
+                <div class="col-md-1">
+                    <label for="rating" class="form-label">Rating</label>
+                    <input type="number" class="form-control" id="rating" name="rating">
+                </div>
+
+
+                <div class="success-msg"></div>
+    
+                <div class="mb-3 text-center">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>

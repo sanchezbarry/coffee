@@ -1,0 +1,133 @@
+body {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+#page-header {
+    padding: 30px 0;
+}
+
+#page-header figure {
+    margin: 0;
+}
+
+#page-header figcaption {
+    display: inline;
+    margin-left: 10px;
+}
+
+#page-header figcaption a {
+    color: #707070;
+    font-size: 20px;
+}
+
+#page-header .nav-item a {
+    font-weight: 300;
+    font-size: 18px;
+    color: #707070;
+    padding: 0 20px;
+    border-right: 1px solid #707070;
+}
+
+#page-header .nav-item:last-of-type a {
+    border: none;
+    padding-right: 0;
+}
+
+/* main {
+    height: 500px;
+} */
+
+#homepage-cover {
+    height: 100%;
+    background: url(./img/homepage-cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 80px;
+}
+
+#homepage-cover h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 100;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#homepage-cover h4 {
+    color: white;
+    font-weight: 75;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#homepage-cover button {
+    background: #EAEAEA;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 10px 20px;
+    justify-content: center;
+    margin: 0px 10px;
+}
+
+#page-home {
+    height: calc(100vh - 188px);
+}
+
+.constrained-full-height {
+    min-height: calc(100vh - 188px);
+}
+
+#page-footer {
+    background: #F2F2F2;
+}
+
+#page-footer p {
+    margin: 0;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+
+
+#page-contact .bg-section {
+    background: url(./img/contact-cover.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#page-contact .content-section h1 {
+    font-size: 36px;
+    font-weight: 100;
+}
+
+#page-contact form label {
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.form-control {
+    background: #F9F9F9;
+    border: none;
+    padding: 10px 5px;
+}
+
+#page-contact form button {
+    background: #EAEAEA;
+    color: black;
+    border: none;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 15px 30px;
+}
+
+.hr {
+    border-bottom: 1px solid #EAEAEA;
+    width: 80px;
+    margin: 0 auto;
+}
+
+#contact-form .error-msgs {
+    display: none;
+}

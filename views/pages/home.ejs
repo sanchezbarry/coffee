@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <h1>hi</h1>
-	<script src="index.js"></script>
-  </body>
-</html>
+<%- include('../partials/header.ejs') %>
+
+<div id="page-home">
+    <div id="homepage-cover">
+        <div class="container text-center">
+            <h1>Bean there, Done that.</h1>
+            <h4><i>The ultimate coffee recipe tracker</i></h4>
+            <a href="/users/register"><button type="button" class="btn btn-light">Register</button></a>
+            <a href="/users/login"><button type="button" class="btn btn-light">Login</button></a>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer.ejs') %>
