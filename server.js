@@ -3,6 +3,8 @@ require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
 const session = require('express-session')
+const methodOverride = require('method-override')
+const bodyParser = require('body-parser')
 
 const app = express()
 const port = 3000
@@ -11,6 +13,7 @@ const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PAS
 
 const pageController = require('./controllers/pages/page_controller')
 const userController = require('./controllers/users/users_controller')
+const recipeController = require('./controllers/recipes/recipes_controller')
 const authMiddleware = require('./middlewares/auth_middleware')
 
 
@@ -20,6 +23,7 @@ const authMiddleware = require('./middlewares/auth_middleware')
 app.set('view engine', 'ejs')
 
 app.use(express.urlencoded({extended: true}))
+// app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(session({
     secret: process.env.SESSION_SECRET,
@@ -31,6 +35,12 @@ app.use(authMiddleware.setAuthUserVar)
 
 app.get('/', pageController.showHome)
 
+app.use(methodOverride("_method"))
+
+app.use(bodyParser.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
+
+app.use(bodyParser.json()); // returns middleware that only parses JSON
+
 // Users Routes
 app.get('/users/register', userController.showRegistrationForm)
 app.post('/users/register', userController.register)
@@ -38,8 +48,13 @@ app.get('/users/login', userController.showLoginForm)
 app.post('/users/login', userController.login)
 app.post('/users/logout', userController.logout)
 
-app.get('/recipes', authMiddleware.isAuthenticated, userController.showRecipes)
-// app.get('/users/profile', userController.showProfile)
+//recipe Routes
+app.get('/recipes', authMiddleware.isAuthenticated, recipeController.showRecipes)
+// gets list of recipes for a particular user.
+app.post('/recipes', recipeController.createRecipe)
+app.delete('/recipes/:id', recipeController.deleteRecipe)
+
+// app.get('/recipes', authMiddleware.isAuthenticated, recipeController.recipeList)
 
 
 app.listen(port, async () => {

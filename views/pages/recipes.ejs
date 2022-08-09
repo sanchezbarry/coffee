@@ -5,10 +5,11 @@
         <div class="container text-center">
             <h1>Your Recipes, <%= user.name %></h1>
             <h4><i>The ultimate coffee recipe tracker</i></h4>
-            <button type="button" class="btn btn-light">Add</button>
-            <button type="button" class="btn btn-light">Edit</button>
 
-            <form id="recipe-form" class="row g-3" method="POST" action="/users/register">
+            <button type="button" class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Add a New Recipe</button>
+            
+            <div class="collapse" id="collapseExample">
+            <form id="recipe-form" class="row g-3" method="POST" action="/recipes">
 
                 <ul class="error-msgs"></ul>
 
@@ -19,13 +20,13 @@
                 </div>
 
                 <div class="col-md-3">
-                  <label for="fullname" class="form-label">Name</label>
-                  <input type="text" class="form-control" id="fullname" name="fullname">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name">
                 </div>
 
                 <div class="col-md-2">
-                    <label for="rating" class="form-label">Type</label>
-                    <select class="form-select" id="rating" name="rating">
+                    <label for="type" class="form-label">Type</label>
+                    <select class="form-select" id="type" name="type">
                         <option selected>Bean Type</option>
                         <option value="single-origin">Single Origin</option>
                         <option value="blend">Blend</option>
@@ -33,8 +34,8 @@
                 </div>
 
                 <div class="col-md-2">
-                    <label for="rating" class="form-label">Equipment</label>
-                    <select class="form-select" id="rating" name="rating">
+                    <label for="equipment" class="form-label">Equipment</label>
+                    <select class="form-select" id="equipment" name="equipment">
                         <option selected>Equipment Used...</option>
                         <option value="Aeropress">Aeropress</option>
                         <option value="V60">V60</option>
@@ -50,7 +51,7 @@
                 </div>
 
                 <div class="col-md-1">
-                    <label for="time" class="form-label">Brew Time</label>
+                    <label for="time" class="form-label">Brew Time (In Seconds)</label>
                     <input type="number" class="form-control" id="time" name="time">
                 </div>
 
@@ -64,8 +65,31 @@
                 <div class="success-msg"></div>
     
                 <div class="mb-3 text-center">
-                    <button type="submit" class="btn btn-primary">Send</button>
+                    <button type="submit" class="btn btn-dark">Create</button>
                 </div>
+
+            </div>
+
+                <div id="recipe-list" class="container">
+                    <div class="row">
+                        <% recipe.forEach(item => { %>
+                            <div id="recipes" class="col shadow-sm p-3 mb-5 bg-body rounded">
+                                <h3>Brand: <%= item.brand %></h3>
+                                <h4>Name: <%= item.name %></h4>
+                                <p>Bean Type: <%= item.type %></p>
+                                <p>Equipment: <%= item.equipment %></p>
+                                <p># Clicks: <%= item.clicks %></p>
+                                <p>Brew Time: <%= item.time %></p>
+                                <p>Rating: <%= item.rating %></p>
+                                <button type="button" class="btn btn-light">Edit</button>
+                                <form action="/recipes/<%=item._id%>?_method=DELETE" method="POST">
+                                <button type="button" class="btn btn-dark">Delete</button></form>
+                            </div>
+                        <% }) %> 
+                    </div>
+                </div>
+                
+
         </div>
     </div>
 </div>

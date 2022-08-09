@@ -97,22 +97,6 @@ const controller = {
           })
     },
 
-    showRecipes: async (req, res) => {
-        // get user data from db using session user
-        let user = null
-
-        try {
-            user = await userModel.findOne({email: req.session.user})
-        } catch(err) {
-            console.log(err)
-            res.redirect('pages/login')
-            return
-        }
-
-        res.render('pages/recipes', {user})
-    },
-
-
     logout: async (req, res) => {
         req.session.user = null
         
