@@ -59,12 +59,27 @@ const controller = {
     },
 
     deleteRecipe: async (req, res) => {
+        console.log('delete route activated')
         try {
             await recipeModel.findByIdAndRemove(req.params.id);
             res.redirect("/recipes");
           } catch (err) {
             console.log(err);
           }
+    },
+
+    editRecipe: (req, res) => {
+        recipeModel.findByIdAndUpdate(
+            req.params._id,
+            req.body,
+            {new:true},
+            (err, product) => {
+                if (err) {
+                    console.log(err)
+                }
+                res.redirect('/recipes')
+            }
+        )
     }
 
     // listRecipes: async (req, res) => {

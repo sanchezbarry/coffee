@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="col-md-1">
-                    <label for="time" class="form-label">Brew Time (In Seconds)</label>
+                    <label for="time" class="form-label">Brew Time (Seconds)</label>
                     <input type="number" class="form-control" id="time" name="time">
                 </div>
 
@@ -67,7 +67,7 @@
                 <div class="mb-3 text-center">
                     <button type="submit" class="btn btn-dark">Create</button>
                 </div>
-
+            </form>
             </div>
 
                 <div id="recipe-list" class="container">
@@ -81,9 +81,12 @@
                                 <p># Clicks: <%= item.clicks %></p>
                                 <p>Brew Time: <%= item.time %></p>
                                 <p>Rating: <%= item.rating %></p>
-                                <button type="button" class="btn btn-light">Edit</button>
-                                <form action="/recipes/<%=item._id%>?_method=DELETE" method="POST">
-                                <button type="button" class="btn btn-dark">Delete</button></form>
+                                <a href="/recipes/<%=item.id%>/edit">
+                                    <button type="button" class="btn btn-light">Edit</button>
+                                </button></a>
+
+                                <form action="/recipes/<%=item.id%>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-dark">Delete</button></form>
                             </div>
                         <% }) %> 
                     </div>

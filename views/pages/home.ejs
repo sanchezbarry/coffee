@@ -5,8 +5,15 @@
         <div class="container text-center">
             <h1>Bean there, Done that.</h1>
             <h4><i>The ultimate coffee recipe tracker</i></h4>
+            <% if (!authUser) { %>
             <a href="/users/register"><button type="button" class="btn btn-light">Register</button></a>
             <a href="/users/login"><button type="button" class="btn btn-light">Login</button></a>
+            <% } else { %>
+            <h5> Welcome back! <%= //user.name %></h5>
+            <a href="/recipes"><button type="button" class="btn btn-light">Recipes</button></a>
+
+            <% } %> 
+
         </div>
     </div>
 </div>

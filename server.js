@@ -7,7 +7,7 @@ const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000
 const connStr = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@generalassembly.a24zm.mongodb.net/?retryWrites=true&w=majority`
 
 
@@ -53,6 +53,7 @@ app.get('/recipes', authMiddleware.isAuthenticated, recipeController.showRecipes
 // gets list of recipes for a particular user.
 app.post('/recipes', recipeController.createRecipe)
 app.delete('/recipes/:id', recipeController.deleteRecipe)
+app.patch('/recipes/:id/edit', recipeController.editRecipe)
 
 // app.get('/recipes', authMiddleware.isAuthenticated, recipeController.recipeList)
 

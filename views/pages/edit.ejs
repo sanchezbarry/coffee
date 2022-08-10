@@ -1,0 +1,64 @@
+<%- include('../partials/header.ejs') %>
+
+
+<form id="recipe-form" class="row g-3" method="POST" action="/recipes/<%=recipe.id%>?_method=PATCH">
+
+    <ul class="error-msgs"></ul>
+
+
+    <div class="col-md-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input type="text" class="form-control" id="brand" name="brand">
+    </div>
+
+    <div class="col-md-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+
+    <div class="col-md-2">
+        <label for="type" class="form-label">Type</label>
+        <select class="form-select" id="type" name="type">
+            <option selected>Bean Type</option>
+            <option value="single-origin">Single Origin</option>
+            <option value="blend">Blend</option>
+          </select>
+    </div>
+
+    <div class="col-md-2">
+        <label for="equipment" class="form-label">Equipment</label>
+        <select class="form-select" id="equipment" name="equipment">
+            <option selected>Equipment Used...</option>
+            <option value="Aeropress">Aeropress</option>
+            <option value="V60">V60</option>
+            <option value="3">3</option>
+          </select>
+    </div>
+
+
+
+    <div class="col-md-1">
+        <label for="clicks" class="form-label"># Clicks</label>
+        <input type="number" class="form-control" id="clicks" name="clicks">
+    </div>
+
+    <div class="col-md-1">
+        <label for="time" class="form-label">Brew Time (Seconds)</label>
+        <input type="number" class="form-control" id="time" name="time">
+    </div>
+
+
+    <div class="col-md-1">
+        <label for="rating" class="form-label">Rating</label>
+        <input type="number" class="form-control" id="rating" name="rating">
+    </div>
+
+
+    <div class="success-msg"></div>
+
+    <div class="mb-3 text-center">
+        <button type="submit" class="btn btn-dark">Create</button>
+    </div>
+</form>
+
+<%- include('../partials/footer'); %>
