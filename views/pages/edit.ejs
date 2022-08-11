@@ -1,9 +1,22 @@
 <%- include('../partials/header.ejs') %>
 
+<div class="container text-center">
+
+
+    <div id="recipe" class="col shadow-sm p-3 mb-5 bg-body rounded">
+        <h3>Brand: <%= recipe.brand %></h3>
+        <h4>Name: <%= recipe.name %></h4>
+        <p>Bean Type: <%= recipe.type %></p>
+        <p>Equipment: <%= recipe.equipment %></p>
+        <p># Clicks: <%= recipe.clicks %></p>
+        <p>Brew Time: <%= recipe.time %></p>
+        <p>Rating: <%= recipe.rating %></p>
+    </div>
 
 <form id="recipe-form" class="row g-3" method="POST" action="/recipes/<%=recipe.id%>?_method=PATCH">
 
     <ul class="error-msgs"></ul>
+    
 
 
     <div class="col-md-3">
@@ -57,8 +70,10 @@
     <div class="success-msg"></div>
 
     <div class="mb-3 text-center">
-        <button type="submit" class="btn btn-dark">Create</button>
+        <button type="submit" class="btn btn-dark">Update</button>
     </div>
 </form>
+
+</div>
 
 <%- include('../partials/footer'); %>

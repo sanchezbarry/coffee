@@ -53,7 +53,8 @@ app.get('/recipes', authMiddleware.isAuthenticated, recipeController.showRecipes
 // gets list of recipes for a particular user.
 app.post('/recipes', recipeController.createRecipe)
 app.delete('/recipes/:id', recipeController.deleteRecipe)
-app.patch('/recipes/:id/edit', recipeController.editRecipe)
+app.get('/recipes/:id/edit', recipeController.showEditForm)
+app.patch('/recipes/:id', recipeController.editRecipe)
 
 // app.get('/recipes', authMiddleware.isAuthenticated, recipeController.recipeList)
 

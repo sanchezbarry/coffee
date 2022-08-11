@@ -43,10 +43,7 @@ const controller = {
 
         const validatedResults = validationResults.value
 
-
         validatedResults.author = user._id
-
-
         
         try {
             await recipeModel.create(validatedResults)
@@ -68,12 +65,21 @@ const controller = {
           }
     },
 
+    showEditForm: (req, res) => {
+        recipeModel.findById(req.params.id, (err, recipe) => {
+            if (err) {
+              console.log(err);
+            }
+            res.render("pages/edit.ejs", { recipe: recipe })
+          })
+    },
+
     editRecipe: (req, res) => {
         recipeModel.findByIdAndUpdate(
             req.params._id,
             req.body,
-            {new:true},
-            (err, product) => {
+            {new: true},
+            (err, recipe) => {
                 if (err) {
                     console.log(err)
                 }

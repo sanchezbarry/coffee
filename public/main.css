@@ -57,7 +57,7 @@ body {
     text-align: center;
 }
 
-#homepage-cover h4 {
+#homepage-cover h4, h5 {
     color: white;
     font-weight: 75;
     margin-bottom: 30px;
