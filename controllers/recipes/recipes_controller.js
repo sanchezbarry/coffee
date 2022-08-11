@@ -4,12 +4,14 @@ const userValidators = require('../validators/users')
 const recipeValidators = require('../validators/recipes')
 
 const controller = {
+
+    // GET & NEW 1&2/7
     showRecipes: async (req, res) => {
         // get user data from db using session user
         let user = null
-        console.log('this is showrecipe')
+        
         try {
-            user = await userModel.findOne({email: req.session.user})
+            user = await userModel.findOne({email: req.session.user.email})
         } catch(err) {
             console.log(err)
             res.redirect('pages/login')
@@ -17,11 +19,12 @@ const controller = {
         }
 
         const recipe = await recipeModel.find({author: user._id}).exec()
-        console.log(recipe)
+        
 
         res.render('pages/recipes', {user, recipe})
     },
 
+    // POST 3/7
     createRecipe: async (req, res) => {
         // validations
         const validationResults = recipeValidators.createRecipeValidator.validate(req.body)
@@ -34,7 +37,7 @@ const controller = {
         let user = null
 
         try {
-            user = await userModel.findOne({email: req.session.user})
+            user = await userModel.findOne({email: req.session.user.email})
         } catch(err) {
             console.log(err)
             res.redirect('pages/login')
@@ -55,8 +58,9 @@ const controller = {
         res.redirect('/recipes')
     },
 
+    // DELETE 4/7
     deleteRecipe: async (req, res) => {
-        console.log('delete route activated')
+        
         try {
             await recipeModel.findByIdAndRemove(req.params.id);
             res.redirect("/recipes");
@@ -65,6 +69,7 @@ const controller = {
           }
     },
 
+    // EDIT 5/7
     showEditForm: (req, res) => {
         recipeModel.findById(req.params.id, (err, recipe) => {
             if (err) {
@@ -74,18 +79,25 @@ const controller = {
           })
     },
 
-    editRecipe: (req, res) => {
-        recipeModel.findByIdAndUpdate(
-            req.params._id,
-            req.body,
-            {new: true},
-            (err, recipe) => {
-                if (err) {
-                    console.log(err)
-                }
-                res.redirect('/recipes')
-            }
-        )
+    // UPDATE & SHOW 6&7/7
+    editRecipe: async (req, res) => {
+        console.log(req.params)
+        console.log(req.body)
+        let recipe = await recipeModel.findById(req.params.id) //try catch for both 86&87 - to see their errors.
+        await recipe.updateOne(req.body)
+        console.log(recipe)
+        res.redirect('/recipes')
+        // recipeModel.findById(
+        //     req.params._id,
+        //     req.body,
+        //     {new: true, overwrite: true},
+        //     (err, recipe) => {
+        //         if (err) {
+        //             console.log(err)
+        //         }
+        //         res.redirect('/recipes')
+        //     }
+        // )
     }
 
     // listRecipes: async (req, res) => {

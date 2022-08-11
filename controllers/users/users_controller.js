@@ -82,7 +82,7 @@ const controller = {
         
             // store user information in session, typically a user id
             //would be a gibberish string on the front end, any subsequent req. to the backend will include this cookie in the request. thessesion secret will decrypt this
-            req.session.user = user.email 
+            req.session.user = user
         
             // save the session before redirection to ensure page
             // load does not happen before session is saved
