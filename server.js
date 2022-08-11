@@ -16,9 +16,6 @@ const userController = require('./controllers/users/users_controller')
 const recipeController = require('./controllers/recipes/recipes_controller')
 const authMiddleware = require('./middlewares/auth_middleware')
 
-
-
-
 // view engine
 app.set('view engine', 'ejs')
 

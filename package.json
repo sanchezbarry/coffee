@@ -29,5 +29,9 @@
   "bugs": {
     "url": "https://github.com/sanchezbarry/coffee/issues"
   },
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "homepage": "https://github.com/sanchezbarry/coffee#readme"
 }
