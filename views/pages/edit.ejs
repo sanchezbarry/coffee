@@ -2,7 +2,6 @@
 
 <div class="container text-center">
 
-
     <div id="recipe" class="col shadow-sm p-3 mb-5 bg-body rounded">
         <h3>Brand: <%= recipe.brand %></h3>
         <h4>Name: <%= recipe.name %></h4>
@@ -17,8 +16,6 @@
 
     <ul class="error-msgs"></ul>
     
-
-
     <div class="col-md-3">
         <label for="brand" class="form-label">Brand</label>
         <input type="text" class="form-control" id="brand" name="brand">
@@ -48,8 +45,6 @@
           </select>
     </div>
 
-
-
     <div class="col-md-1">
         <label for="clicks" class="form-label"># Clicks</label>
         <input type="number" class="form-control" id="clicks" name="clicks">
@@ -71,6 +66,10 @@
 
     <div class="mb-3 text-center">
         <button type="submit" class="btn btn-dark">Update</button>
+    </div>
+
+    <div class="mb-3 text-center">
+        <a href="/recipes"><button type="button" class="btn btn-light">Cancel</button></a>
     </div>
 </form>
 

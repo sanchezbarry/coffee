@@ -20,7 +20,6 @@ const controller = {
 
         const recipe = await recipeModel.find({author: user._id}).exec()
         
-
         res.render('pages/recipes', {user, recipe})
     },
 
@@ -54,7 +53,6 @@ const controller = {
             console.log(err)
         }
 
-        // todo: redirect to products page
         res.redirect('/recipes')
     },
 
@@ -87,30 +85,7 @@ const controller = {
         await recipe.updateOne(req.body)
         console.log(recipe)
         res.redirect('/recipes')
-        // recipeModel.findById(
-        //     req.params._id,
-        //     req.body,
-        //     {new: true, overwrite: true},
-        //     (err, recipe) => {
-        //         if (err) {
-        //             console.log(err)
-        //         }
-        //         res.redirect('/recipes')
-        //     }
-        // )
     }
-
-    // listRecipes: async (req, res) => {
-    //     const recipe = await recipeModel.find().exec()
-    //     console.log('hello')
-    //     res.render('pages/recipes', {user, recipe})
-    // },
-
-    // getRecipe: async(req, res) => {
-    //     const recipe = await recipeModel.findById(req.params.product_id)
-
-    //     res.render('pages/recipes', {recipe})
-    // }
 }
 
 module.exports = controller

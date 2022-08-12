@@ -41,7 +41,7 @@ const controller = {
             return
         }
 
-        res.redirect('pages/login')
+        res.redirect('login')
     },
 
     showLoginForm: (req, res) => {
