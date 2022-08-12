@@ -105,8 +105,6 @@ body {
     font-weight: 100;
 }
 
-
-
 #page-contact .bg-section {
     background: url(./img/contact-cover.png);
     background-repeat: no-repeat;
@@ -150,4 +148,8 @@ body {
 
 #recipes {
     margin: 10px;
+}
+
+#recipe-headers {
+    padding: 10px
 }

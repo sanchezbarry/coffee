@@ -3,9 +3,10 @@
 <div id="page-profile">
     <div id="recipes-cover">
         <div class="container text-center">
-            <h1>Your Recipes, <%= user.name %></h1>
-            <h4><i>The ultimate coffee recipe tracker</i></h4>
-
+            <div id="recipe-headers">
+                <h1>Your Recipes, <%= user.name %></h1>
+                <h4><i>The ultimate coffee recipe tracker</i></h4>
+            </div>
             <button type="button" class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Add a New Recipe</button>
             
             <div class="collapse" id="collapseExample">
