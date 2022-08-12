@@ -151,5 +151,9 @@ body {
 }
 
 #recipe-headers {
-    padding: 10px
+    padding: 10px;
+}
+
+#recipe-button {
+    margin: 5px;
 }

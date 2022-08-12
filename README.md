@@ -10,4 +10,4 @@ Express JS, EJS, Node JS, Javascript, HTML, CSS (Bootstrap), Mongo, Heroku
 ### Improvements
 Improve the css further, some stricter validation on the forms.
 
-!(/https://i.imgur.com/DdMN5YW.png)
+![wireframe image](/https://i.imgur.com/DdMN5YW.png)

@@ -24,7 +24,7 @@
                   <input type="text" class="form-control" id="name" name="name">
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label for="type" class="form-label">Type*</label>
                     <select class="form-select" id="type" name="type">
                         <option selected>Bean Type</option>
@@ -33,7 +33,7 @@
                       </select>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <label for="equipment" class="form-label">Equipment*</label>
                     <select class="form-select" id="equipment" name="equipment">
                         <option selected>Equipment Used...</option>
@@ -49,8 +49,8 @@
                     <input type="number" class="form-control" id="clicks" name="clicks">
                 </div>
 
-                <div class="col-md-1">
-                    <label for="time" class="form-label">Brew Time (Seconds)*</label>
+                <div class="col-md-2">
+                    <label for="time" class="form-label">Time (Seconds)*</label>
                     <input type="number" class="form-control" id="time" name="time">
                 </div>
 
@@ -79,10 +79,10 @@
                                 <p>Brew Time: <%= item.time %></p>
                                 <p>Rating: <%= item.rating %></p>
                                 <a href="/recipes/<%=item.id%>/edit">
-                                    <button type="button" class="btn btn-light">Edit</button>
+                                    <button id="recipe-button" type="button" class="btn btn-light">Edit</button>
                                 </button></a>
                                 <form action="/recipes/<%=item.id%>?_method=DELETE" method="POST">
-                                <button type="submit" class="btn btn-dark">Delete</button></form>
+                                <button id="recipe-button" type="submit" class="btn btn-dark">Delete</button></form>
                             </div>
                         <% }) %> 
                     </div>
