@@ -7,10 +7,14 @@ Bean There, Done That is a coffee-recipe app, specifically for home-brewers and 
 ### Technologies Used
 Express JS, EJS, Node JS, Mongoose, Javascript, HTML, CSS (Bootstrap), Mongo, Heroku
 
+### Features
+1 User Registration/Login/Logout
+2 Recipe Creation/Edit/Delete
+
 ### Improvements
-1 Improve the css further.
-2 Some stricter validation on the forms. 
-3 Function to upload images of coffee made.
-4 Sharing function.
+1 Improve the css further.  
+2 Some stricter validation on the forms.  
+3 Function to upload images of coffee made.  
+4 Sharing function.  
 
 ![wireframe image](https://i.imgur.com/DdMN5YW.png)
