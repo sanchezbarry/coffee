@@ -5,7 +5,7 @@ Coffee-recipe saver
 Bean There, Done That is a coffee-recipe app, specifically for home-brewers and baristas who want to get better at their craft. With it, you can save every brew - and the differences you make every time, such as Brew Time, Grind-Finess, Temperature, Equipment used and many more, all against a simple rating you can give - to find out which time you make the best brew.
 
 ### Technologies Used
-Express JS, EJS, Javascript, HTML, CSS (Bootstrap), Mongo, Heroku
+Express JS, EJS, Node JS, Mongoose, Javascript, HTML, CSS (Bootstrap), Mongo, Heroku
 
 ### Improvements
 1. Improve the css further.
