@@ -106,7 +106,7 @@ body {
 }
 
 #page-contact .bg-section {
-    background: url(./img/contact-cover.png);
+    background: url(/img/contact-cover.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -151,7 +151,9 @@ body {
 }
 
 #recipe-headers {
+    margin-top:10px;
     padding: 10px;
+    margin-bottom: 10px;
 }
 
 #recipe-button {
