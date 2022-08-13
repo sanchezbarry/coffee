@@ -46,7 +46,7 @@ body {
     background: url(./img/homepage-cover.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 80px;
+    padding-top: 75px;
 }
 
 #homepage-cover h1 {
@@ -82,7 +82,7 @@ body {
 }
 
 #how-it-works {
-    margin-top: 25px;
+    margin-top: 45px;
 }
 
 #logout {
@@ -107,6 +107,9 @@ body {
 
 #page-footer {
     background: #F2F2F2;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 #page-footer p {
