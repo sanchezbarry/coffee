@@ -37,10 +37,6 @@ body {
     padding-right: 0;
 }
 
-/* main {
-    height: 500px;
-} */
-
 #homepage-cover {
     height: 100%;
     background: url(./img/homepage-cover.jpg);
@@ -98,12 +94,12 @@ body {
 }
 
 #page-home {
-    height: calc(100vh - 188px);
+    height: calc(100vh - 100px);
 }
 
-.constrained-full-height {
-    min-height: calc(100vh - 188px);
-}
+/* .constrained-full-height {
+    min-height: calc(100vh);
+} */
 
 #page-footer {
     background: #F2F2F2;
