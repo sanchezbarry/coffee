@@ -94,7 +94,7 @@ body {
 }
 
 #page-home {
-    height: calc(100vh - 100px);
+    height: calc(100vh);
 }
 
 /* .constrained-full-height {
@@ -103,8 +103,6 @@ body {
 
 #page-footer {
     background: #F2F2F2;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 

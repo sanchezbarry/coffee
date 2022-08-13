@@ -12,7 +12,8 @@
         <p>Rating: <%= recipe.rating %></p>
     </div>
 
-<form id="recipe-form" class="row g-3" method="POST" action="/recipes/<%=recipe.id%>?_method=PATCH">
+<div class="d-flex justify-content-center">
+<form id="recipe-form" class="row g-3 col-8" method="POST" action="/recipes/<%=recipe.id%>?_method=PATCH">
 
     <ul class="error-msgs"></ul>
     
@@ -45,7 +46,7 @@
           </select>
     </div>
 
-    <div class="col-md-1">
+    <div class="col-md-2">
         <label for="clicks" class="form-label"># Clicks</label>
         <input type="number" class="form-control" id="clicks" name="clicks">
     </div>
@@ -72,6 +73,7 @@
         <a href="/recipes"><button type="button" class="btn btn-light">Cancel</button></a>
     </div>
 </form>
+</div>
 
 </div>
 
