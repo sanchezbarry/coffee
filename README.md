@@ -8,8 +8,8 @@ Bean There, Done That is a coffee-recipe app, specifically for home-brewers and 
 Express JS, EJS, Node JS, Mongoose, Javascript, HTML, CSS (Bootstrap), Mongo, Heroku
 
 ### Features
-1 User Registration/Login/Logout
-2 Recipe Creation/Edit/Delete
+1 User Registration/Login/Logout.  
+2 Recipe Creation/Edit/Delete  
 
 ### Improvements
 1 Improve the css further.  
