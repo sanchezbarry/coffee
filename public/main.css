@@ -64,6 +64,14 @@ body {
     text-align: center;
 }
 
+#homepage-cover p {
+    color: white;
+    font-weight: 45;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
 #homepage-cover button {
     background: #EAEAEA;
     font-size: 16px;
@@ -71,6 +79,10 @@ body {
     padding: 10px 20px;
     justify-content: center;
     margin: 0px 10px;
+}
+
+#how-it-works {
+    margin-top: 25px;
 }
 
 #logout {
